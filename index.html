@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header id="header">
+    </header>
+
+    <!-- Main Section -->
+    <main class="p-4 space-y-4 my-16">
+      <!-- Balance Section -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <div
+          class="flex items-center justify-between border-b border-gray-600 pb-2"
+        >
+          <div class="flex gap-2 justify-center items-center">
+            <div>
+              <span
+                class="bg-yellow-500 px-4 py-2 rounded-full text-xs font-medium"
+              ></span>
+            </div>
+            <div>
+              <span class="block text-sm font-semibold">0.00000086</span>
+              <span class="text-xs text-gray-400">$0.09</span>
+            </div>
+          </div>
+
+          <button
+            id="demo-button"
+            class="bg-red-500 px-4 py-1 rounded-md text-sm"
+          >
+            Demo
+          </button>
+        </div>
+        <div class="flex justify-between mt-4 text-xs font-medium">
+          <div>
+            <span>507954 H/s</span>
+          </div>
+          <div class="border-r border-gray-600"></div>
+          <div>
+            <span class="text-green-400">Online:</span>
+            <span> 5 / 5</span>
+          </div>
+          <div class="border-r border-gray-600"></div>
+          <div>
+            <span>⚡ 0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Affiliate Rewards -->
+      <div
+        class="bg-gradient-to-r from-yellow-500 to-yellow-600 p-4 rounded-lg shadow-md"
+      >
+        <h2 class="font-bold">Affiliate Rewards</h2>
+        <p class="text-sm">
+          Send your link to friends and get a bonus equal to 15% of their
+          earnings
+        </p>
+        <button
+          class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg font-medium"
+        >
+          Generate Link
+        </button>
+      </div>
+
+      <!-- Groups Section -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <h3 class="text-sm font-bold mb-2">Groups: 1</h3>
+        <div class="bg-gray-700 p-2 rounded-lg">
+          <div class="flex justify-between items-center">
+            <span>Default Group</span>
+            <span>507954 H/s</span>
+          </div>
+          <div class="flex justify-between items-center text-sm text-gray-400">
+            <span>Online: 5 / 5</span>
+            <span>0.00000086 BTC</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div
+      id="demo-modal"
+      class="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4 hidden z-10 rounded-t-xl"
+    >
+      <div class="flex flex-col items-center space-y-4">
+        <div class="font-bold">Demo Mode</div>
+        <!-- <button
+          id="close-modal"
+          class="text-red-500 px-4 py-1 rounded-md bg-gray-700"
+        >
+          + Add Demo Worker
+        </button> -->
+        <p class="mt-2 text-sm text-gray-400">
+          Demo mode is enabled. This is a demonstration of the system. Click
+          "Close" to hide this message. Demo mode is enabled. This is a
+          demonstration of the system. Click "Close" to hide this message. Demo
+          mode is enabled. This is a demonstration of the system. Click "Close"
+          to hide this message.
+        </p>
+        <button
+          id="start-mining-modal"
+          class="text-black text-sm font-semibold px-4 py-1.5 rounded-md bg-gradient-to-b from-yellow-400 to-yellow-600 w-full"
+        >
+          Start mining
+        </button>
+        <button
+          id="demo-worker-btn"
+          class="text-white px-4 py-1.5 text-sm font-semibold rounded-md bg-gray-700 w-full"
+        >
+          + Add Demo Worker
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="demo-worker-modal"
+      class="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4 hidden z-10 rounded-t-xl"
+    >
+      <div class="flex flex-col items-center space-y-4">
+        <div class="flex flex-col justify-center pb-2 items-center">
+          <span class="font-bold">Set Up Demo Worker</span>
+          <p class="mt-2 text-sm text-gray-400">
+            Add a virtual worker with real configurations to estimate the
+            revenue.
+          </p>
+        </div>
+        <ul
+          id="worker-list"
+          class="w-full text-sm text-medium max-h-60 overflow-y-auto border-t border-gray-600 divide-y divide-gray-600"
+        >
+          <li
+            class="py-2 cursor-pointer hover:bg-gray-700"
+            data-value="Worker 1"
+          >
+            Worker 1
+          </li>
+          <li
+            class="py-2 cursor-pointer hover:bg-gray-700"
+            data-value="Worker 2"
+          >
+            Worker 2
+          </li>
+          <li
+            class="py-2 cursor-pointer hover:bg-gray-700"
+            data-value="Worker 3"
+          >
+            Worker 3
+          </li>
+          <li
+            class="py-2 cursor-pointer hover:bg-gray-700"
+            data-value="Worker 4"
+          >
+            Worker 4
+          </li>
+          <li
+            class="py-2 cursor-pointer hover:bg-gray-700"
+            data-value="Worker 5"
+          >
+            Worker 5
+          </li>
+          <li
+            class="py-2 cursor-pointer hover:bg-gray-700"
+            data-value="Worker 6"
+          >
+            Worker 6
+          </li>
+          <li
+            class="py-2 cursor-pointer hover:bg-gray-700"
+            data-value="Worker 7"
+          >
+            Worker 7
+          </li>
+          <li
+            class="py-2 cursor-pointer hover:bg-gray-700"
+            data-value="Worker 8"
+          >
+            Worker 8
+          </li>
+          <li
+            class="py-2 cursor-pointer hover:bg-gray-700"
+            data-value="Worker 9"
+          >
+            Worker 9
+          </li>
+        </ul>
+        <button
+          id="set-up-btn"
+          type="button"
+          class="text-black text-sm font-semibold px-4 py-1.5 rounded-md bg-gradient-to-b from-yellow-400 to-yellow-600 w-full"
+          disabled
+        >
+          Set up
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="navbar"></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
