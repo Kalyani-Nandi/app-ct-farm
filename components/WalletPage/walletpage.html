@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wallet Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="flex justify-between items-center px-4 py-2 bg-gray-900">
+        <img src="logo.png" alt="Logo" class="w-10" />
+        <div class="text-gray-400">
+            <i class="fas fa-bell"></i>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="p-4 space-y-4">
+        <!-- Total Clients and Income -->
+        <div class="bg-yellow-500 rounded-lg p-4">
+            <div class="flex justify-between">
+                <p>Total clients: <span class="font-bold">10</span></p>
+                <p>Active/Inactive: <span class="font-bold">-</span></p>
+            </div>
+            <p class="mt-2">Total income: <span class="font-bold">-</span></p>
+        </div>
+
+        <!-- Table Section -->
+        <div class="bg-yellow-500 rounded-lg p-4 text-[10px]">
+            <div class="grid grid-cols-5 gap-1.5">
+                <button class="bg-blue-500 text-white rounded-lg my-4 w-fit px-5 py-0.5 hover:bg-blue-700">
+                    1</button><button
+                    class="bg-blue-500 text-white rounded-lg my-4 w-fit px-5 py-0.5 hover:bg-blue-700">
+                    12</button><button
+                    class="bg-blue-500 text-white rounded-lg my-4 w-fit px-5 py-0.5 hover:bg-blue-700">
+                    14</button><button
+                    class="bg-blue-500 text-white rounded-lg my-4 w-fit px-5 py-0.5 hover:bg-blue-700">
+                    4</button><button
+                    class="bg-blue-500 text-white rounded-lg my-4 w-fit px-5 py-0.5 hover:bg-blue-700">
+                    6
+                </button>
+            </div>
+            <div class="grid grid-cols-5 font-semibold  gap-1.5">
+                <span>OWN</span>
+                <span>Silver 1</span>
+                <span>365D: 24$</span>
+                <span>Active</span>
+                <span>500</span>
+            </div>
+            <div class="grid grid-cols-5 font-semibold  gap-1.5 mt-2">
+                <span>Name 1</span>
+                <span>Silver 2</span>
+                <span>300D: 24$</span>
+                <span>Active</span>
+                <span>500</span>
+            </div>
+            <button class="bg-blue-500 text-white rounded-lg mt-4 w-fit px-6 py-1 hover:bg-blue-700">
+                Add Info
+            </button>
+        </div>
+
+        <!-- Profit Calculator -->
+        <div class="bg-yellow-500 rounded-lg p-4 text-center">
+            <p class="font-bold text-lg">Profit Calculator</p>
+        </div>
+    </div>
+
+<!-- This is the content of navbar.html -->
+<footer class="fixed bottom-0 left-0 w-full bg-gray-800 flex justify-between items-center p-4">
+    <!-- Home Page -->
+    <a href="/components/home/home.html" class="text-center">
+      <button class="text-white flex items-center flex-col">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+        </svg>
+        <p class="text-white text-sm">Home</p>
+      </button>
+    </a>
+  
+    <!-- Dashboard Page -->
+    <a href="/" class="text-center">
+      <button class="text-white flex items-center flex-col">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3 12h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V6H3v2z"/>
+        </svg>
+        <p class="text-white text-sm">Dashboard</p>
+      </button>
+    </a>
+  
+    <!-- Add (+) Page (larger icon with background) -->
+    <a href="/add" class="text-center">
+      <button class="text-white flex items-center flex-col bg-gray-800">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" width="34" height="34">
+          <path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </a>
+  
+    <!-- Wallet Page -->
+    <a href="/components/WalletPage/walletpage.html" class="text-center">
+      <button class="text-white flex items-center flex-col">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+          <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+          <circle cx="18" cy="12" r="1" fill="currentColor"/>
+        </svg>
+        
+        <p class="text-white text-sm">Wallet</p>
+      </button>
+    </a>
+  
+    <!-- Account Page -->
+    <a href="/account" class="text-center ">
+      <button class="text-white flex items-center flex-col">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 14c-5 0-8 3-8 6v2h16v-2c0-3-3-6-8-6z" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        
+        <p class="text-white text-sm">Account</p>
+      </button>
+    </a>
+  </footer>
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
