@@ -15,13 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setUpButton.disabled = true;
   setUpButton.classList.add("opacity-50");
 
-  // Fetch data from API (Move this above the function call)
+  // Fetch data from API
   const fetchData = () => {
     fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json()) // Convert response to JSON
+      .then((response) => response.json())
       .then((data) => {
-        console.log(data); // Log fetched posts
-        displayPosts(data); // Call function to display posts
+        displayPosts(data);
       })
       .catch((error) => console.error("Error fetching data:", error));
   };
@@ -31,11 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     demoModal.classList.remove("hidden");
   });
 
-  // Switch from demo modal to demo worker modal when the "Demo Worker" button is clicked
+  // Switch to demo worker modal and fetch data
   demoWorkerBtn.addEventListener("click", () => {
     demoModal.classList.add("hidden");
     demoWorkerModal.classList.remove("hidden");
-    fetchData(); // ✅ Now fetchData is defined before this call
+    fetchData();
   });
 
   // Close the modal when the "Close" button is clicked
@@ -85,26 +84,38 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     `;
 
-    addListClickEvent(); // Add click event after rendering
+    addListClickEvent();
   }
 
-  // Hide the worker modal when "Set Up" button is clicked
+  // Hide worker modal and add a new group dynamically when "Set Up" is clicked
   setUpButton.addEventListener("click", () => {
-    demoWorkerModal.classList.add("hidden");
-    console.log(selectedWorker);
-    groupContainer.innerHTML = `
-    <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-    <h3 class="text-sm font-bold mb-2">Groups: 1</h3>
-    <div class="bg-gray-700 p-2 rounded-lg">
-      <div class="flex justify-between items-center">
-        <span>${selectedWorker}</span>
-        <span>507954 H/s</span>
-      </div>
-      <div class="flex justify-between items-center text-sm text-gray-400">
-        <span>Online: 5 / 5</span>
-        <span>0.00000086 BTC</span>
-      </div>
-    </div>
-  </div>`;
+    if (selectedWorker) {
+      demoWorkerModal.classList.add("hidden");
+
+      // Create new group container
+      const newGroup = document.createElement("div");
+      newGroup.classList.add("bg-gray-800", "p-4", "rounded-lg", "shadow-md", "mt-2");
+      newGroup.innerHTML = `
+        <h3 class="text-sm font-bold mb-2">Groups: ${groupContainer.children.length + 1}</h3>
+        <div class="bg-gray-700 p-2 rounded-lg">
+          <div class="flex justify-between items-center">
+            <span>${selectedWorker}</span>
+            <span>507954 H/s</span>
+          </div>
+          <div class="flex justify-between items-center text-sm text-gray-400">
+            <span>Online: 5 / 5</span>
+            <span>0.00000086 BTC</span>
+          </div>
+        </div>
+      `;
+
+      // Append the new group to the container
+      groupContainer.appendChild(newGroup);
+
+      // Reset selection
+      selectedWorker = null;
+      setUpButton.disabled = true;
+      setUpButton.classList.add("opacity-50");
+    }
   });
 });
